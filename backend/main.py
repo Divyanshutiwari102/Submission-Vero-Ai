@@ -39,7 +39,7 @@ app.include_router(meta_router, prefix="/v1")
 store.boot_time = time.time()
 
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def root():
     return {"service": "vera-bot", "status": "running", "version": "1.0.0"}
 
